@@ -12,12 +12,14 @@ A task loop is ran often to grab any new task to be ran. An easy improvement cou
 A cleaner loop is ran to ensure all tasks are within parameter (auto-failing tasks running for a long time).
 Tasks have an auto-retry and back-off system, which can very easily be configured as an improvement.
 
-# Improvements
-To fit in the 2 hours limit, I did a lot of corner-cutting. Task model can be largely improved. The scheduler is missing a whole lot of utility function (pause, resume, stop, restart, refresh, ...). It is reaching the point where it is better to split it in multiple files.
-Basic error checking is there but could be improved.
-A proper logger is necessary.
+# CRUD
+The crud is very barebone but present (for create & show), you can check localhost:8000 while running to access the tasks and add some. Thanks https://github.com/prosenjeetshil/django-crud-operations-tutorial for the layout.
 
-1- tasks, model & fn
-2- pool worker, assign task, lock it, and extract result
-3- scheduler, get tasks, assign and lock them
-4- insert new task
+# Improvements
+To fit in the 2 hours limit, I did a lot of corner-cutting. In order of importance, here are th improvements possible to better reach a production system.
+- Testing first of all
+- Implementing an actual task system such as Celery, as the only reason it wasn't done here was to do the exercice. Redis is already present and setup for us to use it with Celery. If we for some reason forgo Celery to improve that custom tasks system, then better task tracking is necessary, along with a scheduler able to receive triggers instead of only a time schedule.
+- Task model can be largely improved. The scheduler is missing a whole lot of utility function (pause, resume, stop, restart, refresh, ...). It is reaching the point where it is better to split it in multiple files.Basic error checking is there but could be improved.
+- Better separation of concerns between Task & Scheduler.
+- A proper logger is necessary.
+- The CRUD is barebone & basic.
