@@ -18,6 +18,6 @@ def create_task_view(request):
 
 def show_task_view(request):
     context = {}
-    tasks = Task.objects.all()
+    tasks = Task.objects.all().order_by('-id')
     context['tasks'] = tasks
     return render(request, "show_task_view.html", context)

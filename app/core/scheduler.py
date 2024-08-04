@@ -82,17 +82,17 @@ class Scheduler:
             print(f"[Scheduler] End: {task}. Output: {task.data_output}")
 
         # Testing purpose before populer
-        Task.objects.create(
-            data_input={ 'a': 5, 'b': 2 }
-        )
-        Task.objects.create(
-            task_type=Task.Task_type.ADD,
-            data_input={ 'a': 5, 'b': 2 }
-        )
-        Task.objects.create(
-            task_type=Task.Task_type.DIVIDE,
-            data_input={ 'a': 5, 'b': 0 }
-        )
+        # Task.objects.create(
+        #     data_input={ 'a': 5, 'b': 2 }
+        # )
+        # Task.objects.create(
+        #     task_type=Task.Task_type.ADD,
+        #     data_input={ 'a': 5, 'b': 2 }
+        # )
+        # Task.objects.create(
+        #     task_type=Task.Task_type.DIVIDE,
+        #     data_input={ 'a': 5, 'b': 0 }
+        # )
 
     def run_task(self, task):
         task.state = Task.State.RUNNING

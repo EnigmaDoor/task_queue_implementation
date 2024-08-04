@@ -21,7 +21,7 @@ $ docker-compose up --build
 ```
 This will run all the build scripts that create the necessary environment for the app to run. Nothing will be installed in your computer. Instead Docker will create containers that run Linux and install all the necessary libraries and dependencies and run the app in there.
 
-### localhost:8000
+### localhost:8000/show
 Is available for testing.
 
 # task_queue_implementation
