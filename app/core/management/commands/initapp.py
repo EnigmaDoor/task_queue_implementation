@@ -14,6 +14,9 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         print("Starting app for the first time...")
         print("="*100)
+        print("Creating database migrations")
+        call_command('makemigrations')
+        print("="*100)
         print("Running database migrations")
         call_command('migrate')
         print("="*100)

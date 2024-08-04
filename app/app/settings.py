@@ -22,8 +22,12 @@ INSTALLED_APPS = [
     'django_json_widget',
 
     'core',
+
+    'crispy_forms',
+    'crispy_bootstrap5'
 ]
 
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

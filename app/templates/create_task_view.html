@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+   <title>Add Task</title>
+{% endblock %}
+
+{% block content %}
+<center><h1>Task Form</h1></center>
+<div class="container">
+   <form method="post" class="jumbotron">
+       {% csrf_token %}
+       {{form|crispy}}
+       <input type="submit" value="Create Task" class="btn btn-success">
+   </form>
+</div>
+{% endblock %}

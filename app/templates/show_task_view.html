@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+   <title>Show Task</title>
+{% endblock %}
+
+{% block content %}
+<center><h1>Show Tasks</h1></center>
+<table class="table">
+   <thead>
+     <tr>
+       <th scope="col">Task ID</th>
+       <th scope="col">Type</th>
+       <th scope="col">State</th>
+       <th scope="col">Input</th>
+       <th scope="col">Output</th>
+       <th scope="col">Created At</th>
+       <th scope="col">Updated At</th>
+       <th scope="col">Available At</th>
+     </tr>
+   </thead>
+   <tbody>
+   {% for i in tasks %}
+     <tr>
+       <td>{{i.id}}</td>
+       <td>{{i.task_type}}</td>
+       <td>{{i.state}}</td>
+       <td>{{i.retry}}</td>
+       <td>{{i.data_input}}</td>
+       <td>{{i.data_output}}</td>
+       <td>{{i.created_at}}</td>
+       <td>{{i.updated_at}}</td>
+       <td>{{i.available_at}}</td>
+     </tr>
+   {% endfor %}
+   </tbody>
+ </table>
+{% endblock %}

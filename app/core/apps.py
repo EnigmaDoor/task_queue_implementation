@@ -8,3 +8,7 @@ class CoreConfig(AppConfig):
     # Automatically call initapp to avoid manual step
     def ready(self):
         call_command('initapp')
+
+        from .scheduler import Scheduler
+        scheduler = Scheduler()
+        scheduler.init_schedule_loop(interval=1)
